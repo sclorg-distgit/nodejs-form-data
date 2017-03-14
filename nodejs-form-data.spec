@@ -4,9 +4,8 @@
 %{?nodejs_find_provides_and_requires}
 
 Name:           %{?scl_prefix}nodejs-form-data
-#Version:       1.0.0-rc4
-Version:        1.0.0
-Release:        1.rc4%{?dist}
+Version:        2.0.0
+Release:        1%{?dist}
 Summary:        A module to create readable "multipart/form-data" streams
 
 License:        MIT
@@ -20,12 +19,6 @@ BuildArch:  noarch
 ExclusiveArch: %{nodejs_arches} noarch
 %else
 ExclusiveArch: %{ix86} x86_64 %{arm} noarch
-%endif
-
-
-%if 0%{enable_tests}
-# many
-#BuildRequires:    %{?scl_prefix}npm(
 %endif
 
 %description
@@ -55,6 +48,9 @@ cp -pr package.json lib %{buildroot}%{nodejs_sitelib}/form-data
 %doc License README.md
 
 %changelog
+* Thu Jan 05 2017 Zuzana Svetlikova <zsvetlik@redhat.com> - 2.0.0-1
+- Updated with script
+
 * Wed Sep 07 2016 Zuzana Svetlikova <zsvetlik@redhat.com>
 - Updated with script, change URL
 
